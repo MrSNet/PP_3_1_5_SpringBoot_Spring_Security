@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org">
+<html lang="en">
 <meta charset="UTF-8">
 <head>
 
@@ -13,9 +13,10 @@
 <div class="container" style="max-width: 100%">
     <div class="row navbar navbar-dark bg-dark">
         <div class="col">
-            <b class="text-white" th:utext="${user.getEmail()}"></b>
-            <span class="text-white" th:utext="' with roles: '"></span>
-            <span class="text-white" th:each="roles : ${user.getRoles()}" th:utext="${roles.toString()}+'   '"></span>
+            <b id="email" class="text-white" ></b>
+            <span class="text-white" >with roles:</span>
+
+            <span id="roles" class="text-white"></span>
         </div>
         <div class="col-1"><a class="nav-link active text-white-50" href="/logout">Logout</a></div>
     </div>
@@ -35,6 +36,7 @@
                     <div class="bg-light p-2 pl-4 font-weight-bold"><h5>About user</h5></div>
                     <div class="card-block p-3">
                         <table class="table table-striped">
+                            <thead>
                             <tr>
                                 <th>Id</th>
                                 <th>First Name</th>
@@ -42,14 +44,11 @@
                                 <th>Email</th>
                                 <th>Role</th>
                             </tr>
-                            <tr th:object="${user}">
-                                <td th:text="${user.getId()}"></td>
-                                <td th:text="${user.getFirstName()}">Name</td>
-                                <td th:text="${user.getLastName()}">Surname</td>
-                                <td th:text="${user.getEmail()}">Email</td>
-                                <td><span th:each="roles : ${user.getRoles()}"
-                                          th:utext="${roles.toString()}+' '">Role</span></td>
-                            </tr>
+                            </thead>
+                            <tbody>
+
+
+                            </tbody>
                         </table>
                     </div>
                 </div>
@@ -57,14 +56,16 @@
         </div>
     </div>
 </div>
-                        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-                                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-                                crossorigin="anonymous"></script>
-                        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-                                integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-                                crossorigin="anonymous"></script>
-                        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-                                integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-                                crossorigin="anonymous"></script>
+
+<script type="module" src="../static/user.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
   </body>
 </html>

@@ -49,7 +49,7 @@ public class Role implements GrantedAuthority {
 
     @Override
     public String toString() {
-        return getName().substring(5).concat(" ");
+        return getName().substring(5);
     }
 
 }

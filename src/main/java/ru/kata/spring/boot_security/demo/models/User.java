@@ -33,7 +33,6 @@ public class User implements UserDetails {
     private String email;
 
     @Column
-    @Size(min = 2, message = "Enter at least 2 characters")
     private String password;
 
     @ManyToMany(fetch = FetchType.LAZY)

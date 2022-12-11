@@ -7,8 +7,8 @@ import ru.kata.spring.boot_security.demo.models.User;
 import java.util.List;
 
 public interface UserService {
-    void add(User user, Long[] rolesId);
-    User updateUser(User user, Long[] rolesId);
+    void add(User user);
+    User updateUser(User user);
     List<User> listUsers();
     void deleteUserById(Long id);
     User findById (Long id);

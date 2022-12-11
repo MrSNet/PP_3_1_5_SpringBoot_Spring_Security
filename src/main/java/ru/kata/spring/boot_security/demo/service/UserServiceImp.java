@@ -21,14 +21,14 @@ public class UserServiceImp implements UserService {
     }
 
     @Override
-    public void add(User user, Long[] rolesId) {
-        userDao.add(user, rolesId);
+    public void add(User user) {
+        userDao.add(user);
     }
 
 
     @Override
-    public User updateUser(User user, Long[] rolesId) {
-        return userDao.updateUser(user, rolesId);
+    public User updateUser(User user) {
+        return userDao.updateUser(user);
     }
 
     @Override
